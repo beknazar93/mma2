@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import Filters from "./assets/Filters";
 import "./Style/DeleteClients.css";
 
-function DeleteClients({ clients, onDeleteClient }) {
+function DeleteClients({ clients, onDeleteClient, filters, setFilters }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTrainer, setSelectedTrainer] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("");
@@ -72,21 +72,7 @@ function DeleteClients({ clients, onDeleteClient }) {
   return (
     <div className="delete-clients">
       <h3>Удаление клиентов</h3>
-      <Filters
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        selectedTrainer={selectedTrainer}
-        setSelectedTrainer={setSelectedTrainer}
-        selectedMonth={selectedMonth}
-        setSelectedMonth={setSelectedMonth}
-        selectedDay={selectedDay}
-        setSelectedDay={setSelectedDay}
-        selectedYear={selectedYear}
-        setSelectedYear={setSelectedYear}
-        selectedSport={selectedSport}
-        setSelectedSport={setSelectedSport}
-        clients={clients}
-      />
+      <Filters filters={filters} setFilters={setFilters} clients={clients} />
       <div className="actions">
         <button onClick={toggleSelectAll} className="delete-button">
           {selectedClients.length === filteredClients.length

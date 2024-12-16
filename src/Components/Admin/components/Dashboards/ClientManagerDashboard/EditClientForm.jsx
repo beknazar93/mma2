@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import Filters from "./assets/Filters";
 import "./Style/EditClientForm.css";
 
-function EditClientForm({ clients, onEditClient }) {
+function EditClientForm({ clients, onEditClient, filters, setFilters }) {
   const [formData, setFormData] = useState({});
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTrainer, setSelectedTrainer] = useState("");
@@ -83,19 +83,9 @@ function EditClientForm({ clients, onEditClient }) {
     <div className="edit-client-form">
       <h3>Изменение данных клиентов</h3>
       <Filters
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        selectedTrainer={selectedTrainer}
-        setSelectedTrainer={setSelectedTrainer}
-        selectedMonth={selectedMonth}
-        setSelectedMonth={setSelectedMonth}
-        selectedDay={selectedDay}
-        setSelectedDay={setSelectedDay}
-        selectedYear={selectedYear}
-        setSelectedYear={setSelectedYear}
-        selectedSport={selectedSport}
-        setSelectedSport={setSelectedSport}
-        clients={clients}
+        clients={filteredClients}
+        filters={filters}
+        setFilters={setFilters}
       />
       {filteredClients.length === 0 ? (
         <p>Нет данных для отображения.</p>

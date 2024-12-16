@@ -103,6 +103,8 @@ function ClientManagerDashboard() {
       {activeTab === "delete" && (
         <DeleteClients
           clients={filteredClients}
+          filters={filters}
+          setFilters={setFilters}
           onDeleteClient={(clientId) =>
             setClients((prev) =>
               prev.filter((client) => client.id !== clientId)
@@ -112,6 +114,8 @@ function ClientManagerDashboard() {
       )}
       {activeTab === "edit" && (
         <EditClientForm
+          filters={filters}
+          setFilters={setFilters}
           clients={filteredClients}
           onEditClient={handleUpdateClient}
         />

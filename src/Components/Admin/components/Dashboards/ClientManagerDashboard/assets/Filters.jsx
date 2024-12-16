@@ -1,20 +1,4 @@
-import React from "react";
-
-const Filters = ({
-  searchTerm,
-  setSearchTerm,
-  selectedTrainer,
-  setSelectedTrainer,
-  selectedYear,
-  setSelectedYear,
-  selectedMonth,
-  setSelectedMonth,
-  selectedDay,
-  setSelectedDay,
-  selectedSport,
-  setSelectedSport,
-  clients,
-}) => {
+const Filters = ({ filters, setFilters, clients }) => {
   const uniqueValues = (key) => {
     return [...new Set(clients.map((client) => client[key]))].filter(
       (value) => value
@@ -29,33 +13,25 @@ const Filters = ({
     <div
       style={{
         display: "flex",
-        gap: "10px", // Расстояние между элементами
-        flexWrap: "wrap", // Перенос строк, если элементы не помещаются
+        gap: "10px",
+        flexWrap: "wrap",
         marginBottom: "20px",
       }}
     >
-      {/* Поле поиска */}
       <input
         type="text"
         placeholder="Поиск клиентов..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        style={{
-          padding: "10px",
-          flex: "1", // Умное растяжение
-          minWidth: "150px", // Минимальная ширина
-        }}
+        value={filters.searchTerm}
+        onChange={(e) =>
+          setFilters((prev) => ({ ...prev, searchTerm: e.target.value }))
+        }
       />
 
-      {/* Фильтр по тренеру */}
       <select
-        value={selectedTrainer}
-        onChange={(e) => setSelectedTrainer(e.target.value)}
-        style={{
-          padding: "10px",
-          flex: "1",
-          minWidth: "150px",
-        }}
+        value={filters.selectedTrainer}
+        onChange={(e) =>
+          setFilters((prev) => ({ ...prev, selectedTrainer: e.target.value }))
+        }
       >
         <option value="">Все тренеры</option>
         {uniqueValues("trainer").map((trainer, index) => (
@@ -65,15 +41,11 @@ const Filters = ({
         ))}
       </select>
 
-      {/* Фильтр по виду спорта */}
       <select
-        value={selectedSport}
-        onChange={(e) => setSelectedSport(e.target.value)}
-        style={{
-          padding: "10px",
-          flex: "1",
-          minWidth: "150px",
-        }}
+        value={filters.selectedSport}
+        onChange={(e) =>
+          setFilters((prev) => ({ ...prev, selectedSport: e.target.value }))
+        }
       >
         <option value="">Все виды спорта</option>
         {uniqueValues("sport_category").map((sport, index) => (
@@ -83,15 +55,11 @@ const Filters = ({
         ))}
       </select>
 
-      {/* Фильтр по году */}
       <select
-        value={selectedYear}
-        onChange={(e) => setSelectedYear(e.target.value)} // Использование setSelectedYear
-        style={{
-          padding: "10px",
-          flex: "1",
-          minWidth: "150px",
-        }}
+        value={filters.selectedYear}
+        onChange={(e) =>
+          setFilters((prev) => ({ ...prev, selectedYear: e.target.value }))
+        }
       >
         <option value="">Все годы</option>
         {uniqueValues("year").map((year, index) => (
@@ -101,15 +69,11 @@ const Filters = ({
         ))}
       </select>
 
-      {/* Фильтр по месяцу */}
       <select
-        value={selectedMonth}
-        onChange={(e) => setSelectedMonth(e.target.value)}
-        style={{
-          padding: "10px",
-          flex: "1",
-          minWidth: "150px",
-        }}
+        value={filters.selectedMonth}
+        onChange={(e) =>
+          setFilters((prev) => ({ ...prev, selectedMonth: e.target.value }))
+        }
       >
         <option value="">Все месяцы</option>
         {uniqueValues("month").map((month, index) => (
@@ -119,15 +83,11 @@ const Filters = ({
         ))}
       </select>
 
-      {/* Фильтр по дню */}
       <select
-        value={selectedDay}
-        onChange={(e) => setSelectedDay(e.target.value)}
-        style={{
-          padding: "10px",
-          flex: "1",
-          minWidth: "150px",
-        }}
+        value={filters.selectedDay}
+        onChange={(e) =>
+          setFilters((prev) => ({ ...prev, selectedDay: e.target.value }))
+        }
       >
         <option value="">Все дни</option>
         {daysInMonth.map((day, index) => (
