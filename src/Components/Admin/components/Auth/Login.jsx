@@ -128,9 +128,7 @@ const Login = () => {
         <button type="submit" disabled={loading}>
           {loading ? "Вход..." : "Войти"}
         </button>
-        <Link to="register">
-          <p>Если еще нет аккаунта?</p>
-        </Link>
+  
       </form>
     </>
   );
