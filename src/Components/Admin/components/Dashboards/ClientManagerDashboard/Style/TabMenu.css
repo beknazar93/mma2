@@ -1,0 +1,41 @@
+.tab-menu {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Позволяет кнопкам переноситься на новую строку */
+  }
+  
+  .tab-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    flex: 1; /* Кнопки занимают равное пространство */
+    text-align: center;
+  }
+  
+  .tab-button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab-button.active {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Адаптация для мобильных устройств */
+  @media (max-width: 768px) {
+    .tab-menu {
+      flex-direction: column; /* Кнопки располагаются вертикально */
+      gap: 5px; /* Уменьшаем расстояние между кнопками */
+    }
+  
+    .tab-button {
+      font-size: 14px; /* Уменьшаем шрифт на мобильных */
+      padding: 8px 15px; /* Уменьшаем отступы */
+    }
+  }
+  

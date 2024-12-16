@@ -1,0 +1,75 @@
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+  }
+  
+  .logout-button {
+    padding: 10px 15px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-button:hover {
+    background-color: #c0392b;
+  }
+  
+  .error-notification {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  /* Адаптация для мобильных устройств */
+  @media (max-width: 768px) {
+    .dashboard-header {
+      flex-direction: column; /* Размещаем элементы вертикально */
+      align-items: flex-start; /* Выравниваем по левому краю */
+      padding: 10px;
+    }
+  
+    .header-content {
+      flex-direction: column; /* Содержимое выстраивается вертикально */
+      align-items: flex-start;
+      gap: 10px; /* Уменьшаем расстояние между элементами */
+      width: 100%; /* Заполняем всю ширину экрана */
+    }
+  
+    .logout-button {
+      width: 100%; /* Кнопка растягивается на всю ширину */
+      text-align: center;
+      padding: 12px; /* Увеличиваем кликабельную область */
+      font-size: 16px; /* Немного увеличиваем шрифт для удобства */
+    }
+  
+    .error-notification {
+      font-size: 12px; /* Уменьшаем шрифт ошибок */
+      margin-top: 5px;
+    }
+  }
+  
+  /* Адаптация для очень узких экранов */
+  @media (max-width: 480px) {
+    .header-content {
+      gap: 5px; /* Минимальное расстояние между элементами */
+    }
+  
+    .logout-button {
+      font-size: 14px; /* Ещё уменьшаем шрифт */
+    }
+  }
+  

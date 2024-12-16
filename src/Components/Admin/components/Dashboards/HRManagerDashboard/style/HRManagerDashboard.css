@@ -1,0 +1,115 @@
+/* Общий контейнер для HRManagerDashboard */
+.hr-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+  }
+  
+  /* Контент основного блока */
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-left: 1px solid #ddd;
+    overflow-y: auto;
+  }
+  
+  .content h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .content ul li {
+    margin-bottom: 10px;
+  }
+  
+  .content ul li a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+  }
+  
+  .content ul li a:hover {
+    color: #0056b3;
+  }
+  
+  /* Сайдбар */
+  .sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #ddd;
+  }
+  
+  .sidebar ul li.active {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Адаптация для мобильных устройств */
+  @media (max-width: 768px) {
+    .hr-dashboard {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+      padding: 15px;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .content {
+      padding: 15px;
+    }
+  
+    .sidebar ul li {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content h2 {
+      font-size: 20px;
+    }
+  
+    .sidebar ul li {
+      font-size: 12px;
+    }
+  }
+  

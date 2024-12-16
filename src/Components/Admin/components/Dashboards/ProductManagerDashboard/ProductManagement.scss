@@ -1,0 +1,159 @@
+/* Общий контейнер */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Заголовок панели */
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.manager-info {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Сообщения об ошибках и успехе */
+.error-message,
+.success-message {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    background-color: #fdecea;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+}
+
+.success-message {
+    background-color: #eafaf1;
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Таб-меню */
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+}
+
+.tab-button.active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Контейнер для табов */
+.tab-content {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Контейнер форм */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 15px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 20px;
+    }
+
+    .manager-info {
+        font-size: 14px;
+    }
+
+    .tab-menu {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .tab-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .form-container {
+        padding: 10px;
+    }
+
+    .form-container h2 {
+        font-size: 18px;
+    }
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 480px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 18px;
+    }
+
+    .tab-button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
