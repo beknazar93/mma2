@@ -103,6 +103,7 @@ function EditClientForm({ clients, onEditClient, filters, setFilters }) {
                 <th>День</th>
                 <th>Месяц</th>
                 <th>Год</th>
+                <th>Сумма оплаты</th>
                 <th>Комментарий</th>
                 <th>Действия</th>
               </tr>
