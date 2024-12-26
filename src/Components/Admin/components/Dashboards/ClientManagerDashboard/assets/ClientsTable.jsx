@@ -116,7 +116,7 @@ const ClientsTable = ({ clients, onExtendClient }) => {
               <td className={`payment-status ${client.payment}`}>
                 {client.payment}
               </td>
-              <td>{client.price}сом</td>
+              <td>{client.price}с</td>
               <td>
                 <button
                   className="extend-button"
