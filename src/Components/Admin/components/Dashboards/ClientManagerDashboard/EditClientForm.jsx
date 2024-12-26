@@ -119,7 +119,9 @@ function EditClientForm({ clients, onEditClient, filters, setFilters }) {
                   <td className="day">{client.day || "Не указан"}</td>
                   <td>{client.month || "Не указан"}</td>
                   <td>{client.year || "Не указан"}</td>
+                  <td>{client.price}сом</td>
                   <td>{client.comment || "Нет комментария"}</td>
+
                   <td>
                     <button
                       className="edit-button"
