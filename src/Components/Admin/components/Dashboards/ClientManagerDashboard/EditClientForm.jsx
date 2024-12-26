@@ -208,6 +208,13 @@ function EditClientForm({ clients, onEditClient, filters, setFilters }) {
                 value={formData.year || ""}
                 onChange={handleInputChange}
               />
+              <input
+                type="text"
+                name="price"
+                placeholder="Сумма оплаты"
+                value={formData.price || ""}
+                onChange={handleInputChange}
+              />
               <textarea
                 name="comment"
                 placeholder="Комментарий"
