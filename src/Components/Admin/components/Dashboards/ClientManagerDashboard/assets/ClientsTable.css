@@ -9,7 +9,9 @@
     width: 100%; /* Ширина таблицы */
     border-collapse: collapse; /* Убираем отступы между ячейками */
   }
-  
+.commentTable{
+    width: 200px;
+  }
   .clients-table thead th {
     position: sticky; /* Фиксируем заголовок */
     top: 0; /* Закрепляем заголовок вверху */
