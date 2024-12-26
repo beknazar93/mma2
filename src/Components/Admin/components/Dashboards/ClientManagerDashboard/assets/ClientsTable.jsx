@@ -111,7 +111,7 @@ const ClientsTable = ({ clients, onExtendClient }) => {
               <td>{client.day || "Не указан"}</td>
               <td>{client.month || "Не указан"}</td>
               <td>{client.year || "Не указан"}</td>
-              <td>{client.comment || "Нет комментария"}</td>
+              <td className="commentTable">{client.comment || "Нет комментария"}</td>
               <td className={`payment-status ${client.payment}`}>
                 {client.payment}
               </td>
