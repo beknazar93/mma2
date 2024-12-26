@@ -90,14 +90,15 @@ const ClientsTable = ({ clients, onExtendClient }) => {
         <thead>
           <tr>
             <th>Имя</th>
+            <th>Email</th>
             <th>Телефон</th>
             <th>Тренер</th>
             <th>Вид спорта</th>
-            <th>День</th>
             <th>Месяц</th>
             <th>Год</th>
             <th>Комментарий</th>
             <th>Статус оплаты</th>
+            <th>Сумма оплаты</th>
             <th>Действия</th>
           </tr>
         </thead>
@@ -105,16 +106,17 @@ const ClientsTable = ({ clients, onExtendClient }) => {
           {clients.map((client) => (
             <tr key={client.id}>
               <td>{client.name}</td>
+              <td>{client.email}</td>
               <td>{client.phone}</td>
               <td>{client.trainer || "Не указан"}</td>
               <td>{client.sport_category || "Не указано"}</td>
-              <td>{client.day || "Не указан"}</td>
               <td>{client.month || "Не указан"}</td>
               <td>{client.year || "Не указан"}</td>
-              <td className="commentTable">{client.comment || "Нет комментария"}</td>
+              <td>{client.comment || "Нет комментария"}</td>
               <td className={`payment-status ${client.payment}`}>
                 {client.payment}
               </td>
+              <td>{client.price}сом</td>
               <td>
                 <button
                   className="extend-button"
